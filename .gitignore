@@ -1,5 +1,14 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
+# Configurações do Intellij
+/.idea/
+*.iml
+
+# Configurações do Eclipse
+/.settings/
+/.project
+/.classpath
+
 # compiled output
 /dist
 /tmp
