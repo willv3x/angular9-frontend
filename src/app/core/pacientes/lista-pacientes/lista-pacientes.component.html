@@ -1,0 +1,19 @@
+<p class="text-muted text-center" *ngIf="pacientes.length == 0">Não há pacientes cadastrados</p>
+
+<ol class="list-unstyled" *ngIf="pacientes.length > 0">
+
+  <li class="text-center" *ngFor="let paciente of pacientes">
+
+    <app-paciente [paciente]="paciente"></app-paciente>
+
+  </li>
+
+</ol>
+
+
+
+
+
+
+
+

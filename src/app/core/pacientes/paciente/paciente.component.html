@@ -1,0 +1,11 @@
+<span class="text-center p-5">Código: {{paciente.id}}</span>
+
+<span class="text-center p-5">Nome: {{paciente.nome}}</span>
+
+<span class="text-center p-5">Gênero: {{paciente.genero}}</span>
+
+<span class="text-center p-5">Nascimento: {{paciente.nascimento | date: 'dd/MM/yyyy'}}</span>
+
+<button class="text-center p-5" onClick="location.reload()" (click)="deletarPaciente()">Deletar</button>
+
+

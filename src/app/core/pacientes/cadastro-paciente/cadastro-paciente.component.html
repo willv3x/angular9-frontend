@@ -1,0 +1,33 @@
+<form [formGroup]="pacienteForm" (submit)="salvarPaciente()" class="text-center p-5">
+
+  <div>
+
+    <label for="nome" class="pr-5">Nome: </label>
+    <input id="nome" formControlName="nome" type="text">
+
+  </div>
+
+  <div>
+
+    <label for="genero" class="pr-5">Gênero: </label>
+    <select id="genero" formControlName="genero" required>
+      <option [ngValue]="null">Escolher gênero...</option>
+      <option *ngFor="let opcaoGenero of opcoesGenero | keyvalue">{{opcaoGenero.key}}</option>
+    </select>
+
+  </div>
+
+  <div>
+
+    <label for="nascimento" class="pr-5">Data nascimento: </label>
+    <input id="nascimento" formControlName="nascimento" type="datetime-local">
+
+  </div>
+
+  <div>
+
+    <button type="submit" [disabled]="pacienteForm.invalid" onClick="location.reload()">Salvar</button>
+
+  </div>
+
+</form>
