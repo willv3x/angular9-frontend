@@ -6,7 +6,15 @@ export class Paciente {
 
   nome: string;
 
+  nomeMae: string;
+
   genero: GeneroEnum;
 
   nascimento: Date;
+
+  rg: number;
+
+  cpf: number;
+
+  endereco: string;
 }

@@ -3,7 +3,14 @@
   <div>
 
     <label for="nome" class="pr-5">Nome: </label>
-    <input id="nome" formControlName="nome" type="text">
+    <input id="nome" formControlName="nome" type="text" required="" maxlength="255">
+
+  </div>
+
+  <div>
+
+    <label for="nomeMae" class="pr-5">Nome da Mãe: </label>
+    <input id="nomeMae" formControlName="nomeMae" type="text" maxlength="255">
 
   </div>
 
@@ -20,7 +27,28 @@
   <div>
 
     <label for="nascimento" class="pr-5">Data nascimento: </label>
-    <input id="nascimento" formControlName="nascimento" type="datetime-local">
+    <input id="nascimento" formControlName="nascimento" type="datetime-local" required="">
+
+  </div>
+
+  <div>
+
+    <label for="rg" class="pr-5">RG: </label>
+    <input id="rg" formControlName="rg" type="number" maxlength="20">
+
+  </div>
+
+  <div>
+
+    <label for="cpf" class="pr-5">CPF: </label>
+    <input id="cpf" formControlName="cpf" type="number" maxlength="11">
+
+  </div>
+
+  <div>
+
+    <label for="endereco" class="pr-5">Endereço: </label>
+    <input id="endereco" formControlName="endereco" type="text" maxlength="255">
 
   </div>
 

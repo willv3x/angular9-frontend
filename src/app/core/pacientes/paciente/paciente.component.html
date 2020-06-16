@@ -1,11 +1,19 @@
-<span class="text-center p-5">Código: {{paciente.id}}</span>
+<span class="text-center p-3">{{paciente.id}}</span>
 
-<span class="text-center p-5">Nome: {{paciente.nome}}</span>
+<span class="text-center p-3">{{paciente.nome}}</span>
 
-<span class="text-center p-5">Gênero: {{paciente.genero}}</span>
+<span class="text-center p-3">{{paciente.nomeMae}}</span>
 
-<span class="text-center p-5">Nascimento: {{paciente.nascimento | date: 'dd/MM/yyyy'}}</span>
+<span class="text-center p-3">{{paciente.genero}}</span>
 
-<button class="text-center p-5" onClick="location.reload()" (click)="deletarPaciente()">Deletar</button>
+<span class="text-center p-3">{{paciente.nascimento | date: 'dd/MM/yyyy'}}</span>
+
+<span class="text-center p-3">{{paciente.rg}}</span>
+
+<span class="text-center p-3">{{paciente.cpf}}</span>
+
+<span class="text-center p-3">{{paciente.endereco}}</span>
+
+<button class="text-center p-2" (click)="deletarPaciente()">Deletar</button>
 
 

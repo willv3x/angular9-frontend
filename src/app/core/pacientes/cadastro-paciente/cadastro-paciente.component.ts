@@ -21,8 +21,12 @@ export class CadastroPacienteComponent implements OnInit {
 
     this.pacienteForm = new FormGroup({
       nome: new FormControl('', [Validators.maxLength(255), Validators.required]),
+      nomeMae: new FormControl('', [Validators.maxLength(255)]),
       genero: new FormControl(null, [Validators.required]),
-      nascimento: new FormControl(null, [Validators.required])
+      nascimento: new FormControl(null, [Validators.required]),
+      rg: new FormControl('', [Validators.maxLength(20)]),
+      cpf: new FormControl('', [Validators.maxLength(11)]),
+      endereco: new FormControl('', [Validators.maxLength(255)])
     });
   }
 
@@ -31,8 +35,12 @@ export class CadastroPacienteComponent implements OnInit {
     const paciente: Paciente = new Paciente();
 
     paciente.nome = this.pacienteForm.controls.nome.value;
+    paciente.nomeMae = this.pacienteForm.controls.nomeMae.value;
     paciente.genero = this.pacienteForm.controls.genero.value;
     paciente.nascimento = this.pacienteForm.controls.nascimento.value;
+    paciente.rg = this.pacienteForm.controls.rg.value;
+    paciente.cpf = this.pacienteForm.controls.cpf.value;
+    paciente.endereco = this.pacienteForm.controls.endereco.value;
 
     this.pacienteServico.salvarPaciente(paciente);
   }

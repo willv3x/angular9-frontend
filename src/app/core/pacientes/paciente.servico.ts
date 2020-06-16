@@ -1,7 +1,7 @@
 import {environment} from '../../../environments/environment';
 import {Paciente} from '../../modelo/paciente';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {Observable, Subject} from 'rxjs';
 import {Injectable} from '@angular/core';
 
 @Injectable()
@@ -13,9 +13,12 @@ export class PacienteServico {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
+  fonteAtualizacaoRepositorio = new Subject();
+  atualizacaoRepositorio = this.fonteAtualizacaoRepositorio.asObservable();
+
   constructor(private httpClient: HttpClient) { }
 
-  obterPacientes(): Observable<Paciente[]> {
+  obterPacientes() {
 
     return this.httpClient.get<Paciente[]>(this.contextoAPI + '/obter');
   }
@@ -26,6 +29,8 @@ export class PacienteServico {
       response => console.log(response),
       err => console.log(err)
     );
+
+    this.fonteAtualizacaoRepositorio.next();
   }
 
   deletarPaciente(codigo: number) {
@@ -34,5 +39,7 @@ export class PacienteServico {
       response => console.log(response),
       err => console.log(err)
     );
+
+    this.fonteAtualizacaoRepositorio.next();
   }
 }
